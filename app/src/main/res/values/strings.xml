@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Customers</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Customer Management</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_customers">Customers</string>
+    <string name="menu_details">Details</string>
+    <string name="menu_add_new">Add New</string>
+    <string name="boat_image">Boat Image</string>
+    <string name="action_notification">Notification</string>
+    <string name="phone">PHONE</string>
+    <string name="contact_person">CONTACT PERSON</string>
+    <string name="role">ROLE</string>
+    <string name="email">EMAIL</string>
+    <string name="contact_person_phone">CONTACT PERSON PHONE</string>
+    <string name="address">ADDRESS</string>
+    <string name="enter_address">Enter address</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="enter_name_of_contact_person">Enter name of contact person</string>
+    <string name="enter_role_of_contact_person">Enter role of contact person</string>
+    <string name="enter_email_of_contact_person">Enter email of contact person</string>
+    <string name="enter_phone_number_of_contact_person">Enter phone number of contact person</string>
+    <string name="enter_customer_name">Enter Customer Name</string>
+    <string name="list_empty_add_customers_to_show">List Empty Add Customers to show</string>
+</resources>

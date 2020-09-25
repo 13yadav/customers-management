@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    // defined colors
+    <color name="green_blue">#00c39c</color>
+    <color name="warm_pink">#ff477c</color>
+    <color name="marigold">#ffcb00</color>
+    <color name="azure">#0094eb</color>
+    <color name="reddish_pink">#ff3366</color>
+    <color name="greyish">#b4b4b4</color>
+    <color name="dark">#1d1d26</color>
+</resources>

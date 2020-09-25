@@ -1,0 +1,61 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+
+    // app styles
+    <style name="ScreenHeading">
+        <item name="android:textSize">25sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:lineSpacingExtra">-5sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+    <style name="TextStyle2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="FieldContent">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="ListItemSubheading">
+        <item name="android:gravity">end</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="android:textColor">@color/dark</item>
+    </style>
+    <style name="TabHeading">
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+    <style name="TextStyle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="android:textColor">@color/greyish</item>
+    </style>
+    <style name="FieldHeading">
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">14sp</item>
+        <item name="android:textColor">@color/greyish</item>
+    </style>
+
+</resources>

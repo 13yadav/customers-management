@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/customerListFragment">
+    <fragment
+        android:id="@+id/customerListFragment"
+        android:name="com.strangecoder.customers.ui.customers.CustomerListFragment"
+        android:label="fragment_customer_list"
+        tools:layout="@layout/fragment_customer_list" >
+        <action
+            android:id="@+id/action_customerListFragment_to_addNewFragment"
+            app:destination="@id/addNewFragment" />
+        <action
+            android:id="@+id/action_customerListFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewFragment"
+        android:name="com.strangecoder.customers.ui.addnew.AddNewFragment"
+        android:label="fragment_add_new"
+        tools:layout="@layout/fragment_add_new" >
+        <action
+            android:id="@+id/action_addNewFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:popUpTo="@id/customerListFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="customerId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.strangecoder.customers.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_addNewFragment"
+            app:destination="@id/addNewFragment" />
+        <argument
+            android:name="customerId"
+            app:argType="string" />
+    </fragment>
+</navigation>
