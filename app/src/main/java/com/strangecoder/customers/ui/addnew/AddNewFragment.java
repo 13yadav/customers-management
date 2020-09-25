@@ -1,6 +1,5 @@
 package com.strangecoder.customers.ui.addnew;
 
-import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,19 +37,30 @@ public class AddNewFragment extends Fragment {
         assert getArguments() != null;
         AddNewFragmentArgs args = AddNewFragmentArgs.fromBundle(getArguments());
 
-        Application application = this.requireActivity().getApplication();
         // Injection
-        DataSource dataSource = Injection.provideCustomerDataSource(application);
+        DataSource dataSource = Injection.provideCustomerDataSource(this.getContext());
 
         // Initializing ViewModel and ViewModelFactory
-        AddNewViewModelFactory viewModelFactory = new AddNewViewModelFactory(dataSource, application);
+        AddNewViewModelFactory viewModelFactory = new AddNewViewModelFactory(args.getCustomerId(), dataSource);
         addNewViewModel = new ViewModelProvider(this, viewModelFactory).get(AddNewViewModel.class);
         binding.setViewModel(addNewViewModel);
         binding.setLifecycleOwner(this);
 
-        binding.saveFab.setOnClickListener(v -> {
-            updateCustomer(binding, args);
-        });
+        binding.saveFab.setOnClickListener(v -> updateCustomer(binding, args));
+
+        mDisposable.add(addNewViewModel.getCustomerById().subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(customer -> {
+                    binding.customerName.setText(customer.name);
+                    binding.address.setText(customer.address);
+                    binding.phoneNumber.setText(customer.phone);
+                    binding.contactPerson.setText(customer.contactPerson);
+                    binding.personRole.setText(customer.contactPersonRole);
+                    binding.contactPersonPhone.setText(customer.contactPersonPhone);
+                    binding.email.setText(customer.contactPersonEmail);
+
+                }, throwable -> Log.e("MR.J", "Failed to get customer" + throwable)));
+
 
         return binding.getRoot();
     }
@@ -71,7 +81,7 @@ public class AddNewFragment extends Fragment {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(() -> Navigation.findNavController(binding.saveFab)
-                        .navigate(AddNewFragmentDirections.actionAddNewFragmentToDetailsFragment(args.getCustomerId())),
+                                .navigate(AddNewFragmentDirections.actionAddNewFragmentToDetailsFragment(args.getCustomerId())),
                         throwable -> Log.e("MR.J", "Customer update failed" + throwable)));
     }
 

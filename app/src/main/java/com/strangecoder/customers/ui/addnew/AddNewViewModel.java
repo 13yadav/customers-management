@@ -1,30 +1,29 @@
 package com.strangecoder.customers.ui.addnew;
 
-import android.app.Application;
-
-import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.strangecoder.customers.database.Customer;
 import com.strangecoder.customers.utils.DataSource;
-import com.strangecoder.customers.ui.customers.CustomerListViewModel;
 
 import io.reactivex.Completable;
+import io.reactivex.Flowable;
 
-public class AddNewViewModel extends AndroidViewModel {
+public class AddNewViewModel extends ViewModel {
 
     private DataSource mDataSource;
-    Customer mCustomer;
+    private String customerId;
 
-    public AddNewViewModel(DataSource dataSource, Application application) {
-        super(application);
+    public AddNewViewModel(String customerId, DataSource dataSource) {
         mDataSource = dataSource;
+        this.customerId = customerId;
+        getCustomerById();
     }
 
-
-    public Completable updateCustomer(Customer customer){
+    public Completable updateCustomer(Customer customer) {
         return mDataSource.update(customer);
+    }
+
+    public Flowable<Customer> getCustomerById() {
+        return mDataSource.getById(customerId);
     }
 }

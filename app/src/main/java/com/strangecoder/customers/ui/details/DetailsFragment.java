@@ -52,13 +52,13 @@ public class DetailsFragment extends Fragment {
         mDisposable.add(detailsViewModel.getCustomerById().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(customer -> {
-                    binding.customerName.setText(customer.getName());
-                    binding.address.setText(customer.getAddress());
-                    binding.phoneNumber.setText(customer.getPhone());
-                    binding.contactPerson.setText(customer.getContactPerson());
-                    binding.personRole.setText(customer.getContactPersonRole());
-                    binding.contactPersonPhone.setText(customer.getContactPersonPhone());
-                    binding.email.setText(customer.getContactPersonEmail());
+                    binding.customerName.setText(customer.name);
+                    binding.address.setText(customer.address);
+                    binding.phoneNumber.setText(customer.phone);
+                    binding.contactPerson.setText(customer.contactPerson);
+                    binding.personRole.setText(customer.contactPersonRole);
+                    binding.contactPersonPhone.setText(customer.contactPersonPhone);
+                    binding.email.setText(customer.contactPersonEmail);
 
                 }, throwable -> Log.e("MR.J", "Failed to get customer" + throwable)));
 

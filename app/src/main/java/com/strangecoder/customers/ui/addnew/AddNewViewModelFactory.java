@@ -17,11 +17,11 @@ import com.strangecoder.customers.utils.DataSource;
 public class AddNewViewModelFactory implements ViewModelProvider.Factory {
 
     private DataSource mDataSource;
-    private Application mApplication;
+    private String customerId;
 
-    public AddNewViewModelFactory(DataSource dataSource, Application application) {
+    public AddNewViewModelFactory(String customerId, DataSource dataSource) {
         mDataSource = dataSource;
-        mApplication = application;
+        this.customerId = customerId;
     }
 
     @SuppressWarnings("unchecked")
@@ -29,7 +29,7 @@ public class AddNewViewModelFactory implements ViewModelProvider.Factory {
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (modelClass.isAssignableFrom(AddNewViewModel.class)) {
-            return (T) new AddNewViewModel(mDataSource, mApplication);
+            return (T) new AddNewViewModel(customerId, mDataSource);
         }
         throw new IllegalArgumentException("Unknown ViewModel Class");
     }

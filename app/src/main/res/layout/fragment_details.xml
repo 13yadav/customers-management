@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.strangecoder.customers.ui.details.DetailsViewModel" />
@@ -27,7 +28,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/cover_image"
+                android:background="@drawable/cover_image_2"
                 android:fitsSystemWindows="true"
                 app:contentScrim="@color/colorPrimary"
                 app:popupTheme="@style/AppTheme.PopupOverlay">
@@ -325,6 +326,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/contact_ph_label"
                         app:layout_constraintTop_toBottomOf="@+id/contact_ph_label"
