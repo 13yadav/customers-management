@@ -24,7 +24,7 @@
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <com.google.android.material.appbar.MaterialToolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -45,7 +45,6 @@
                         style="@style/ScreenHeading"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_8"
                         tools:text="One Sales Corporation" />
 
                     <!-- <com.google.android.material.tabs.TabLayout-->
@@ -53,7 +52,7 @@
                     <!--    android:layout_height="wrap_content"/>-->
                 </LinearLayout>
 
-            </com.google.android.material.appbar.MaterialToolbar>
+            </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -112,6 +111,18 @@
                         app:layout_constraintTop_toBottomOf="@+id/address_label"
                         tools:text="Shop No. 3, Trinity Tower, Dadar, Mumbai" />
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="@dimen/margin_16"
+                        android:background="@color/light_grey"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/address" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -156,6 +167,18 @@
                         app:layout_constraintTop_toBottomOf="@+id/phone_label"
                         tools:text="91 12345 67890" />
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="@dimen/margin_16"
+                        android:background="@color/light_grey"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -199,6 +222,18 @@
                         app:layout_constraintStart_toStartOf="@+id/contact_person_label"
                         app:layout_constraintTop_toBottomOf="@+id/contact_person_label"
                         tools:text="John Doe" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="@dimen/margin_16"
+                        android:background="@color/light_grey"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/contact_person" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -242,6 +277,18 @@
                         app:layout_constraintStart_toStartOf="@+id/role_label"
                         app:layout_constraintTop_toBottomOf="@+id/role_label"
                         tools:text="Director" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="@dimen/margin_16"
+                        android:background="@color/light_grey"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/person_role" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -286,6 +333,18 @@
                         app:layout_constraintStart_toStartOf="@+id/mail_label"
                         app:layout_constraintTop_toBottomOf="@+id/mail_label"
                         tools:text="john@onesales.corp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/margin_16"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="@dimen/margin_16"
+                        android:background="@color/light_grey"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/email" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -342,8 +401,10 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_16"
             android:src="@drawable/pencil"
+            app:backgroundTint="@color/reddish_pink"
             app:layout_anchor="@id/app_bar_layout"
-            app:layout_anchorGravity="bottom|end|right" />
+            app:layout_anchorGravity="bottom|end|right"
+            app:tint="@android:color/white" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

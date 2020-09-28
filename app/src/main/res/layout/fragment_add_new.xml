@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.strangecoder.customers.ui.addnew.AddNewViewModel" />
@@ -22,7 +23,7 @@
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <com.google.android.material.appbar.MaterialToolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -43,13 +44,12 @@
                         style="@style/ScreenHeading"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_8"
-                        android:layout_marginEnd="@dimen/margin_8"
-                        android:hint="@string/enter_customer_name" />
+                        android:hint="@string/enter_customer_name"
+                        android:singleLine="true" />
 
                 </LinearLayout>
 
-            </com.google.android.material.appbar.MaterialToolbar>
+            </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -103,6 +103,7 @@
                         android:layout_marginEnd="16dp"
                         android:hint="@string/enter_address"
                         android:inputType="textPostalAddress"
+                        android:singleLine="true"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/address_label"
                         app:layout_constraintTop_toBottomOf="@+id/address_label" />
@@ -147,6 +148,7 @@
                         android:layout_marginEnd="16dp"
                         android:hint="@string/enter_phone_number"
                         android:inputType="phone"
+                        android:singleLine="true"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/phone_label"
                         app:layout_constraintTop_toBottomOf="@+id/phone_label" />
@@ -190,6 +192,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
                         android:hint="@string/enter_name_of_contact_person"
+                        android:singleLine="true"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/contact_person_label"
                         app:layout_constraintTop_toBottomOf="@+id/contact_person_label" />
@@ -233,6 +236,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
                         android:hint="@string/enter_role_of_contact_person"
+                        android:singleLine="true"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/role_label"
                         app:layout_constraintTop_toBottomOf="@+id/role_label" />
@@ -276,6 +280,7 @@
                         android:layout_marginEnd="16dp"
                         android:hint="@string/enter_email_of_contact_person"
                         android:inputType="textEmailAddress"
+                        android:singleLine="true"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/mail_label"
                         app:layout_constraintTop_toBottomOf="@+id/mail_label" />
@@ -321,6 +326,7 @@
                         android:layout_marginBottom="16dp"
                         android:hint="@string/enter_phone_number_of_contact_person"
                         android:inputType="phone"
+                        android:singleLine="true"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/contact_ph_label"
                         app:layout_constraintTop_toBottomOf="@+id/contact_ph_label" />
@@ -336,8 +342,10 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_16"
             android:src="@drawable/check"
+            app:backgroundTint="@color/reddish_pink"
             app:layout_anchor="@id/app_bar_layout"
-            app:layout_anchorGravity="bottom|end|right" />
+            app:layout_anchorGravity="bottom|end|right"
+            app:tint="@android:color/white" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

@@ -11,10 +11,18 @@
         tools:layout="@layout/fragment_customer_list" >
         <action
             android:id="@+id/action_customerListFragment_to_addNewFragment"
-            app:destination="@id/addNewFragment" />
+            app:destination="@id/addNewFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_customerListFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/addNewFragment"
@@ -24,6 +32,10 @@
         <action
             android:id="@+id/action_addNewFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
             app:popUpTo="@id/customerListFragment"
             app:popUpToInclusive="false" />
         <argument
@@ -37,7 +49,11 @@
         tools:layout="@layout/fragment_details" >
         <action
             android:id="@+id/action_detailsFragment_to_addNewFragment"
-            app:destination="@id/addNewFragment" />
+            app:destination="@id/addNewFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <argument
             android:name="customerId"
             app:argType="string" />

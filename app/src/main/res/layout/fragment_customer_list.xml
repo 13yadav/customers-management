@@ -23,7 +23,7 @@
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <com.google.android.material.appbar.MaterialToolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -57,7 +57,7 @@
                         android:text="All" />
                 </LinearLayout>
 
-            </com.google.android.material.appbar.MaterialToolbar>
+            </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -86,8 +86,10 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_16"
             android:src="@drawable/add"
+            app:backgroundTint="@color/reddish_pink"
             app:layout_anchor="@id/app_bar_layout"
-            app:layout_anchorGravity="bottom|end|right" />
+            app:layout_anchorGravity="bottom|end|right"
+            app:tint="@android:color/white" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/filter_fab"
@@ -95,7 +97,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_margin="@dimen/margin_16"
-            app:srcCompat="@drawable/funnel" />
+            app:backgroundTint="@color/reddish_pink"
+            app:srcCompat="@drawable/funnel"
+            app:tint="@android:color/white" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout

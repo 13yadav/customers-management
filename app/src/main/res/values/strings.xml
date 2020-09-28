@@ -25,5 +25,6 @@
     <string name="enter_email_of_contact_person">Enter email of contact person</string>
     <string name="enter_phone_number_of_contact_person">Enter phone number of contact person</string>
     <string name="enter_customer_name">Enter Customer Name</string>
-    <string name="list_empty_add_customers_to_show">List Empty Add Customers to show</string>
+    <string name="list_empty_add_customers_to_show">Add Customers to List!</string>
+    <string name="delete">Delete</string>
 </resources>

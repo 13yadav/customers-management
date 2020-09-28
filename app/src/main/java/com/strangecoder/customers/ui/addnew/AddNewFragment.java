@@ -3,14 +3,21 @@ package com.strangecoder.customers.ui.addnew;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import com.strangecoder.customers.R;
 import com.strangecoder.customers.database.Customer;
@@ -65,15 +72,29 @@ public class AddNewFragment extends Fragment {
         return binding.getRoot();
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        NavController navController = Navigation.findNavController(view);
+        AppBarConfiguration appBarConfiguration =
+                new AppBarConfiguration.Builder(navController.getGraph()).build();
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.main);
+        NavigationUI.setupWithNavController(
+                toolbar, navController, appBarConfiguration);
+    }
+
+
     private void updateCustomer(FragmentAddNewBinding binding, AddNewFragmentArgs args) {
         String customerId = args.getCustomerId();
-        String customerName = binding.customerName.getText().toString();
-        String address = binding.address.getText().toString();
-        String phoneNumber = binding.phoneNumber.getText().toString();
-        String contactPerson = binding.contactPerson.getText().toString();
-        String personRole = binding.personRole.getText().toString();
-        String email = binding.email.getText().toString();
-        String contactPersonPhone = binding.contactPersonPhone.getText().toString();
+        String customerName = binding.customerName.getText().toString().trim();
+        String address = binding.address.getText().toString().trim();
+        String phoneNumber = binding.phoneNumber.getText().toString().trim();
+        String contactPerson = binding.contactPerson.getText().toString().trim();
+        String personRole = binding.personRole.getText().toString().trim();
+        String email = binding.email.getText().toString().trim();
+        String contactPersonPhone = binding.contactPersonPhone.getText().toString().trim();
 
         Customer customer = new Customer(customerId, customerName, address, phoneNumber, contactPerson, personRole, email, contactPersonPhone);
 
